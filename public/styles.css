@@ -1,0 +1,9 @@
+h1 {color: maroon;
+}
+
+.jumbotron {
+  background-attachment: fixed;
+  background-image: url(https://image.freepik.com/free-photo/beautiful-shot-3-frozen-bare-trees-growing-snowy-ground-dark-sky-background_181624-4320.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

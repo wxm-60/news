@@ -21,9 +21,48 @@
     <title>News</title>
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Daily News</a>
+        <div class="navbar-nav ml-auto">
+         <a class="btn btn-outline-info" href="https://wxm.netlify.app/contact.html">Subscribe</a>
+        </div>
+    </div>
+    </nav>
 
-    <div class="container mt-5">
-      <h1>News</h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-6"> Today is <span id="datetime"></span> </h1>
+            <script> var dt = new Date(); document.getElementById("datetime").innerHTML = dt.toLocaleDateString(); </script>
+            <p class="lead"> Current weather: <%= @current_weather %> </p>
+            <p> Tomorrow: <%= @extended_forecast[0][1] %> </p>
+            <p> Next 7 days: </p>
+      <ul>
+      <% @extended_forecast.slice(1, 7).each do |weather| %>
+        <li> day <%= weather[0] %>: <%= weather[1] %> </li>
+      <% end %>
+      </ul>
+        </div>
+    </div>
+
+    <div class="container mt-5"> 
+    <h1 class="text-center"> Today's Headlines </h1>
+    <ol>
+    <% @topnews.each do |news| %>
+    <li class="title"> <%= news[0] %> 
+    <a href=<%= news[1] %>> Read here </a> 
+    </li>
+    <% end %> 
+    </ol>   
+    </div>
+
+    <hr class="my-4">
+    <div class="container footer">
+      <div class="row my-5">
+        <div class="col-sm-3">
+          <h6>powered by NewsAPI.org</h6>
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
