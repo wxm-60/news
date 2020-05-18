@@ -32,7 +32,7 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-6"> Today is <span id="datetime"></span> </h1>
+            <h2 class="display-6"> Today is <span id="datetime"></span> </h2>
             <script> var dt = new Date(); document.getElementById("datetime").innerHTML = dt.toLocaleDateString(); </script>
             <p class="lead"> Current weather: <%= @current_weather %> </p>
             <p> Tomorrow: <%= @extended_forecast[0][1] %> </p>
