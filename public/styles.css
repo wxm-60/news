@@ -1,9 +1,15 @@
 h1 {color: maroon;
 }
 
+h2 {color: navy}
+
+.title {font-weight: bold}
+
+.card {background-color: rgb(236, 248, 250)}
+
 .jumbotron {
   background-attachment: fixed;
-  background-image: url(https://www.freepik.com/free-photo/dusk-colorful-dramatic-yellow-sun_1088374.htm#page=1&query=sunrise%20background&position=14);
+  background-image: url(https://image.freepik.com/free-photo/dusk-colorful-dramatic-yellow-sun_1203-5704.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

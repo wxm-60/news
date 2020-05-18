@@ -32,7 +32,7 @@ get "/" do
 
   @topnews=[]
   for article in @news["articles"]
-    @topnews << ["#{article["title"]}","#{article["url"]}"]
+    @topnews << ["#{article["title"]}","#{article["url"]}","#{article["content"]}"]
   end 
 
   view "news"  

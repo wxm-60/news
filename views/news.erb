@@ -34,12 +34,12 @@
         <div class="container">
             <h2 class="display-6"> Today is <span id="datetime"></span> </h2>
             <script> var dt = new Date(); document.getElementById("datetime").innerHTML = dt.toLocaleDateString(); </script>
-            <p class="lead"> Current weather: <%= @current_weather %> </p>
+            <p class="lead"> Current weather at Kellogg Global Hub is <%= @current_weather %> </p>
             <p> Tomorrow: <%= @extended_forecast[0][1] %> </p>
-            <p> Next 7 days: </p>
+            <p> Next five days: </p>
       <ul>
-      <% @extended_forecast.slice(1, 7).each do |weather| %>
-        <li> day <%= weather[0] %>: <%= weather[1] %> </li>
+      <% @extended_forecast.slice(1, 5).each do |weather| %>
+        <li> <%= weather[0] %>D after tomorrow: <%= weather[1] %> </li>
       <% end %>
       </ul>
         </div>
@@ -47,21 +47,23 @@
 
     <div class="container mt-5"> 
     <h1 class="text-center"> Today's Headlines </h1>
-    <ol>
     <% @topnews.each do |news| %>
-    <li class="title"> <%= news[0] %> 
-    <a href=<%= news[1] %>> Read here </a> 
-    </li>
-    <% end %> 
-    </ol>   
+        <ul>
+        <div class="card">
+        <div class="card-body">
+        <p class="title"> <%= news[0] %>  </p>       
+        <p class="card-text"> <%= news[2] %> </p>
+        <a href=<%= news[1] %>> Read here </a> 
+        </div>
+        </div>
+        </ul>  
+     <% end %> 
     </div>
 
     <hr class="my-4">
     <div class="container footer">
       <div class="row my-5">
-        <div class="col-sm-3">
-          <h6>powered by NewsAPI.org</h6>
-        </div>
+          <p>powered by openweathermap.org and newsapi.org</p>
       </div>
     </div>
 
